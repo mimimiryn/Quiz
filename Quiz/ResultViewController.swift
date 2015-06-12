@@ -11,28 +11,37 @@ import UIKit
 class ResultViewController: UIViewController {
      var correctAnswer:Int = 0
     
-    if(sum == 5){
-        println("全問正解！　動物マスター！")
-    }else if(sum ==3){
-    println("4問正解！　おしい動物マスターまでもう少し！")
-    }else if(sum == 4){
-    println("3問正解! がんばって！")
-    }else if (sum == 2){
-    println("2問正解、、、　やる気あるー？")
-    }else if (sum==1){
-    println("1問正解、、、　やる気あるー？")
-    }else if (sum==0){
-    println("1問正解、、、　出直してこいっ！！！！")
+    @IBOutlet var resultTextView:UILabel!
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+    
+    if(correctAnswer == 5){
+    resultTextView.text = String("全問正解！　動物マスター！")
+    
+    }else if(correctAnswer == 4){
+    resultTextView.text = String("4問正解！　おしい動物マスターまでもう少し！")
+    
+    }else if(correctAnswer == 3){
+    resultTextView.text = String("3問正解! がんばって！")
+    
+    }else if (correctAnswer == 2){
+    resultTextView.text = String("2問正解、、、　やる気あるー？")
+    
+    }else if (correctAnswer==1){
+    resultTextView.text = String("1問正解、、、　やる気あるー？")
+    }else if (correctAnswer==0){
+    resultTextView.text = String("1問正解、、、　出直してこいっ！！！！")
+    }
     }
 
     
     
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+   
 
         // Do any additional setup after loading the view.
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
