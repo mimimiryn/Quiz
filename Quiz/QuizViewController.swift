@@ -34,7 +34,6 @@ class QuizViewController: UIViewController {
     @IBOutlet var seikai: UIImageView!
     
     
-    
     //@IBOutlet var americanshort1: UIImageView!
     //@IBOutlet var americanshort2: UIImageView!
     //@IBOutlet var tintira: UIImageView!
@@ -45,6 +44,8 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        seikai.hidden = true
         
         //------------------------ここから下にクイズを書く------------------------//
         quizArray.append(["アルパカはなにの仲間？","ラクダ","ウマ","シカ",1])
@@ -73,21 +74,41 @@ class QuizViewController: UIViewController {
         }
     }
     
+    
+    
     @IBAction func choiceAnswer(sender: UIButton) {
         sum++
         println("random \(random)")
         if quizArray[random][4] as! Int == sender.tag {
+            
+            seikai.hidden = false
+            
+            let img = UIImage(named:"true.png")
+            seikai!.image = img
+            
+            
+            
             //正解数を増やす
             correctAnswer++
+        }else{
+        
+            seikai.hidden = false
+            
+        let img = UIImage(named:"false.png")
+        seikai!.image = img
         }
         
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC)),
+            dispatch_after(delayTime, dispatch_get_main_queue()){
+      
         //解いた問題数の合計が予め設定していた問題数に達したら結果画面へ
         if sum == questionNumber {
             performSegueToResult()
         }
         quizArray.removeAtIndex(random)
         choiceQuiz()
-    }
+            
+        },
     
     
     

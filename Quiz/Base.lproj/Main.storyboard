@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -111,12 +111,16 @@
                                     <action selector="choiceAnswer:" destination="BUj-kM-nEE" eventType="touchUpInside" id="GTb-ox-p5W"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="false.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qqr-Je-m23">
+                                <rect key="frame" x="65" y="166" width="192" height="193"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="quizTextView" destination="LtN-I0-zAN" id="dPw-Tb-PaB"/>
+                        <outlet property="seikai" destination="Qqr-Je-m23" id="Wzr-At-5Dk"/>
                         <outletCollection property="choiceButtons" destination="kki-U3-jv0" collectionClass="NSMutableArray" id="Obq-c2-Etx"/>
                         <outletCollection property="choiceButtons" destination="n7F-Li-K3q" collectionClass="NSMutableArray" id="cuU-NB-ZaR"/>
                         <outletCollection property="choiceButtons" destination="MRD-48-CKy" collectionClass="NSMutableArray" id="OAc-et-Tnf"/>
@@ -188,5 +192,6 @@
     </scenes>
     <resources>
         <image name="_51985.jpg" width="626" height="337"/>
+        <image name="false.png" width="151" height="151"/>
     </resources>
 </document>
